@@ -17,14 +17,10 @@ export default class App extends React.Component {
   render() {
     return (
       <Switch>
-        <Route exact path='/' component={Home}/>
+        <Route exact path='/' render={() => <Home/>}/>
 
-        <Route path='*' component={NotFound}/>
+        <Route path='*' render={() => <NotFound/>}/>
       </Switch>
     );
   }
 }
-
-App.contextTypes = {
-  router: React.PropTypes.object
-};
